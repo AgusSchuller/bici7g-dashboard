@@ -11,9 +11,9 @@ function ProductById() {
   useEffect(() => {
     fetch(`http://localhost:3001/api/products/${params.id}`)
       .then((response) => response.json())
-      .then((product) => {
+      .then((product) => {//console.log(product)
         setProductData(product.data);
-        //console.log(product.data)
+        console.log(product.data)
       })
       .catch((error) => {
         console.log(error);
@@ -32,7 +32,7 @@ function ProductById() {
       </nav>
       <br />
       <br />
-      <div class="links-container">
+      <div className="links-container">
         <a href={`/products`}>Volver a Productos</a>
         <a href={`/`}>Volver al Home</a>
       </div>

@@ -12,7 +12,7 @@ function Products() {
       .then((data) => {
         //console.log(data.data.products)
         setProducts(data.data.products);
-        // console.log(data.data.products)
+         //console.log(data.data.products)
       })
       .catch((error) => console.log(error));
   }, []);
