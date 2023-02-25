@@ -11,6 +11,7 @@ import Users from "./components/Users";
 import Products from "./components/Products";
 import MainBody from "./components/MainBody";
 import UserById from "./components/UserById";
+import ProductById from "./components/ProductById";
 
 
 const router = createBrowserRouter([
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/users/:id",
     element: <UserById />
+  },
+  {
+    path: "product/:id",
+    element: <ProductById />
   }
 
 ]);

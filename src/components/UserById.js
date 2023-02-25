@@ -1,35 +1,43 @@
 import React from "react";
 import "../../src/App.css";
 import { useState, useEffect } from "react";
-import { Routes, Route, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function UserById() {
   const params = useParams();
   // console.log(params);
-  const setUser = useState([]);
+  const [userData, setUserData] = useState([]);
 
   useEffect(() => {
-    console.log("se monto el componente user");
     fetch(`http://localhost:3001/api/users/${params.id}`)
       .then((response) => response.json())
-      .then((data) => {
-        const userId = data;
-        console.log(userId.data.Apellido);
+      .then((user) => {
+        setUserData(user.data);
+        //console.log(user.data)
+      })
+      .catch((error) => {
+        console.log(error);
       });
   }, []);
+  //console.log(userData)
 
   return (
     <div>
       <h2 className="title">Detalle de Usuario</h2>
 
-      <div>
-        <h3>Nombre de Usuario: {}</h3>
-        <h3>Apellido de Usuario: {}</h3>
-        <h4>Email: {}</h4>
+      <nav className="card">
+        <h2>Id de Usuario: {userData.id}</h2>
+        <h3>Nombre de Usuario: {userData.Nombre}</h3>
+        <h3>Apellido de Usuario: {userData.Apellido}</h3>
+        <h4>Email: {userData.Email}</h4>
+      </nav>
+
+      <br />
+      <br />
+      <div class="links-container">
+        <a href={`/users`}>Volver a Usuarios</a>
+        <a href={`/`}>Volver al Home</a>
       </div>
-      <a className="App-link-volver" href={`/`}>
-        Volver al Home
-      </a>
     </div>
   );
 }

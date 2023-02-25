@@ -9,9 +9,10 @@ function Products() {
     console.log("se monto el componente users");
     fetch("http://localhost:3001/api/products")
       .then((response) => response.json())
-      .then((data) => { //console.log(data.data.products)
+      .then((data) => {
+        //console.log(data.data.products)
         setProducts(data.data.products);
-       // console.log(data.data.products)
+        // console.log(data.data.products)
       })
       .catch((error) => console.log(error));
   }, []);
@@ -36,6 +37,9 @@ function Products() {
               <h2>ID Producto: {producto.id}</h2>
               <h3>Nombre Producto: {producto.name}</h3>
               <h3>Descripción: {producto.description}</h3>
+              <a className="App-link" href={`/product/${producto.id}`}>
+                Ver Producto
+              </a>
               <br />
             </div>
           );
@@ -45,7 +49,7 @@ function Products() {
         Volver al Home
       </a>
     </div>
-    );
+  );
 }
 
 export default Products;
