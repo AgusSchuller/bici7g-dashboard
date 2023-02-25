@@ -9,7 +9,8 @@ function Users() {
     console.log("se monto el componente users");
     fetch("http://localhost:3001/api/users")
       .then((response) => response.json())
-      .then((data) => { console.log(data)
+      .then((data) => {
+        console.log(data);
         setUsers(data.data.usersApi);
         //console.log(data.data.usersApi)
       })
@@ -26,7 +27,6 @@ function Users() {
   return (
     <div>
       <h2 className="title">Listado de Usuarios</h2>
-
       <ul>
         {users.length === 0 && <p>Cargando</p>}
         {users.map((user, i) => {
@@ -37,6 +37,7 @@ function Users() {
               <h3>Nombre de Usuario: {user.name}</h3>
               <h3>Apellido de Usuario: {user.lastName}</h3>
               <h4>Email: {user.email}</h4>
+              <a href={`/users/ ${user.id}`}>Ver Usuario</a>
               <br />
             </div>
           );
