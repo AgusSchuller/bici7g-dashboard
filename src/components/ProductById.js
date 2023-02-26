@@ -25,13 +25,14 @@ function ProductById() {
     <div>
       <h2 className="title">Detalle del Producto</h2>
       <nav className="card">
-        <h2>Id de Producto: {productData.id}</h2>
-        <h3>Nombre del Producto: {productData.Nombre}</h3>
-        <h4>Descripción del Producto: {productData.Descripcion}</h4>
-        <h4>Talla: {productData.Talla}</h4>
+        <h2>Id de Producto:</h2>
+        <h2>{productData.id}</h2>
+        <h3>Nombre del Producto:</h3>
+        <h3>{productData.Nombre}</h3>
+        <h3>Descripción del Producto:</h3>
+        <h4>{productData.Descripcion}</h4>        
       </nav>
-      <br />
-      <br />
+      <br/>      
       <div className="links-container">
         <a href={`/products`}>Volver a Productos</a>
         <a href={`/`}>Volver al Home</a>

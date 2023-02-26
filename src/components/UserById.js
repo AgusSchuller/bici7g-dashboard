@@ -26,10 +26,14 @@ function UserById() {
       <h2 className="title">Detalle de Usuario</h2>
 
       <nav className="card">
-        <h2>Id de Usuario: {userData.id}</h2>
-        <h3>Nombre de Usuario: {userData.Nombre}</h3>
-        <h3>Apellido de Usuario: {userData.Apellido}</h3>
-        <h4>Email: {userData.Email}</h4>
+        <h2>Id de Usuario:</h2>
+        <h2>{userData.id}</h2>
+        <h3>Nombre de Usuario:</h3>
+        <h3>{userData.Nombre}</h3>
+        <h3>Apellido de Usuario:</h3>
+        <h3>{userData.Apellido}</h3>
+        <h4>Email:</h4>
+        <h4>{userData.Email}</h4>
       </nav>
 
       <br />

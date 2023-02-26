@@ -35,8 +35,10 @@ function Products() {
             <div key={i} className="card">
               <br />
               <h2>ID Producto: {producto.id}</h2>
-              <h3>Nombre Producto: {producto.name}</h3>
-              <h3>Descripción: {producto.description}</h3>
+              <h3>Nombre Producto:</h3>
+              <h3>{producto.name}</h3>
+              <h3>Descripción:</h3>
+              <h4>{producto.description}</h4>
               <a className="App-link" href={`/product/${producto.id}`}>
                 Ver Producto
               </a>
