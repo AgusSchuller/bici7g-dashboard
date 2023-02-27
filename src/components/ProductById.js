@@ -13,13 +13,14 @@ function ProductById() {
       .then((response) => response.json())
       .then((product) => {//console.log(product)
         setProductData(product.data);
-        console.log(product.data)
+        //console.log(product.data)
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
-  //console.log(productData)
+  console.log(productData.Imagen)
+
 
   return (
     <div>
@@ -30,7 +31,11 @@ function ProductById() {
         <h3>Nombre del Producto:</h3>
         <h3>{productData.Nombre}</h3>
         <h3>Descripción del Producto:</h3>
-        <h4>{productData.Descripcion}</h4>        
+        <h4>{productData.Descripcion}</h4>
+        {/* <figure>
+        <img src=`D:\Dropbox\004-Programacion\Digital House\Curso Full Stack\Proyectos\grupo_7_bicis7g\public\img\bicis\${productData.Imagen}` alt="foto-de-bici" />
+        </figure> */}
+         
       </nav>
       <br/>      
       <div className="links-container">
