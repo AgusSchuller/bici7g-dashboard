@@ -19,7 +19,7 @@ function ProductById() {
         console.log(error);
       });
   }, []);
-  console.log(productData.Imagen)
+  //console.log(productData.Imagen)
 
 
   return (
@@ -33,7 +33,7 @@ function ProductById() {
         <h3>Descripción del Producto:</h3>
         <h4>{productData.Descripcion}</h4>
         {/* <figure>
-        <img src=`D:\Dropbox\004-Programacion\Digital House\Curso Full Stack\Proyectos\grupo_7_bicis7g\public\img\bicis\${productData.Imagen}` alt="foto-de-bici" />
+        <img src="http://" alt="foto-de-bici" />
         </figure> */}
          
       </nav>
