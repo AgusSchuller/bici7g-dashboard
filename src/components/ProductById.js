@@ -2,6 +2,9 @@ import React from "react";
 import "../../src/App.css";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import ListGroup from "react-bootstrap/ListGroup";
 
 function ProductById() {
   const params = useParams();
@@ -20,30 +23,29 @@ function ProductById() {
         console.log(error);
       });
   }, []);
-  console.log(productData.Imagen);
+  console.log(productData);
 
   return (
-    <div>
-      <h2 className="title">Detalle del Producto</h2>
-      <nav className="card">
-        <h2>Id de Producto:</h2>
-        <h2>{productData.id}</h2>
-        <h3>Nombre del Producto:</h3>
-        <h3>{productData.Nombre}</h3>
-        <h3>Descripción del Producto:</h3>
-        <h4>{productData.Descripcion}</h4>
-      </nav>
-      <img
+    <Card style={{ width: "18rem" }}>
+      <Card.Img
+        variant="top"
         src={`http://localhost:3001/img/bicis/${productData.Imagen}`}
-        alt="foto-de-bici"
+        width="100%"
       />
-
-      <br />
-      <div className="links-container">
-        <a href={`/products`}>Volver a Productos</a>
-        <a href={`/`}>Volver al Home</a>
-      </div>
-    </div>
+      <Card.Body>
+        <Card.Title>{productData.Nombre}</Card.Title>
+        <Card.Text>{productData.Descripcion}</Card.Text>
+      </Card.Body>
+      <ListGroup className="list-group-flush">
+        <ListGroup.Item>Id Producto: {productData.id}</ListGroup.Item>
+        <ListGroup.Item>Modelo: {} </ListGroup.Item>
+      </ListGroup>
+      <Card.Body>
+        <Card.Link href="/products">Productos</Card.Link>
+        <br />
+        <Card.Link href="/">Home</Card.Link>
+      </Card.Body>
+    </Card>
   );
 }
 

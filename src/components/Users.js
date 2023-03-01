@@ -3,6 +3,7 @@ import "../../src/App.css";
 import { useState, useEffect } from "react";
 import TopBar from "./TopBar";
 
+
 function Users() {
   const [users, setUsers] = useState([]);
 
@@ -26,7 +27,8 @@ function Users() {
   }, []);
   //console.log(users);
   return (
-    
+    <React.Fragment>
+      <TopBar />
     <div className="container">
       <h2 className="title">Listado de Usuarios</h2>
       <ul>
@@ -51,6 +53,7 @@ function Users() {
         Volver al Home
       </a>
     </div>
+    </React.Fragment>
   );
 }
 
