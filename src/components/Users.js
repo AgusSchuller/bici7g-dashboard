@@ -1,6 +1,7 @@
 import React from "react";
 import "../../src/App.css";
 import { useState, useEffect } from "react";
+import TopBar from "./TopBar";
 
 function Users() {
   const [users, setUsers] = useState([]);
@@ -10,22 +11,23 @@ function Users() {
     fetch("http://localhost:3001/api/users")
       .then((response) => response.json())
       .then((data) => {
-       // console.log(data);
+        // console.log(data);
         setUsers(data.data.usersApi);
         //console.log(data.data.usersApi)
       })
       .catch((error) => console.log(error));
   }, []);
   useEffect(() => {
-   console.log("se actualizo el componente");
+    console.log("se actualizo el componente");
   }, [users]);
 
   useEffect(() => {
-     return () => console.log("se desmonto el componente");
+    return () => console.log("se desmonto el componente");
   }, []);
   //console.log(users);
   return (
-    <div>
+    
+    <div className="container">
       <h2 className="title">Listado de Usuarios</h2>
       <ul>
         {users.length === 0 && <p>Cargando</p>}
@@ -37,7 +39,9 @@ function Users() {
               <h3>Nombre de Usuario: {user.name}</h3>
               <h3>Apellido de Usuario: {user.lastName}</h3>
               <h4>Email: {user.email}</h4>
-              <a className="App-link" href={`/users/ ${user.id}`}>Ver Usuario</a>
+              <a className="App-link" href={`/users/ ${user.id}`}>
+                Ver Usuario
+              </a>
               <br />
             </div>
           );

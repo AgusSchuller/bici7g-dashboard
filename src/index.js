@@ -12,6 +12,7 @@ import Products from "./components/Products";
 import MainBody from "./components/MainBody";
 import UserById from "./components/UserById";
 import ProductById from "./components/ProductById";
+import TopBar from "./components/TopBar";
 
 
 const router = createBrowserRouter([

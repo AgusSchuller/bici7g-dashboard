@@ -11,7 +11,8 @@ function ProductById() {
   useEffect(() => {
     fetch(`http://localhost:3001/api/products/${params.id}`)
       .then((response) => response.json())
-      .then((product) => {//console.log(product)
+      .then((product) => {
+        //console.log(product)
         setProductData(product.data);
         //console.log(product.data)
       })
@@ -19,8 +20,7 @@ function ProductById() {
         console.log(error);
       });
   }, []);
-  //console.log(productData.Imagen)
-
+  console.log(productData.Imagen);
 
   return (
     <div>
@@ -32,12 +32,13 @@ function ProductById() {
         <h3>{productData.Nombre}</h3>
         <h3>Descripción del Producto:</h3>
         <h4>{productData.Descripcion}</h4>
-        {/* <figure>
-        <img src="http://" alt="foto-de-bici" />
-        </figure> */}
-         
       </nav>
-      <br/>      
+      <img
+        src={`http://localhost:3001/img/bicis/${productData.Imagen}`}
+        alt="foto-de-bici"
+      />
+
+      <br />
       <div className="links-container">
         <a href={`/products`}>Volver a Productos</a>
         <a href={`/`}>Volver al Home</a>
