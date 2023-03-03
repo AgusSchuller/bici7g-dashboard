@@ -10,6 +10,7 @@ function ProductById() {
   const params = useParams();
   //console.log(params);
   const [productData, setProductData] = useState([]);
+  
 
   useEffect(() => {
     fetch(`http://localhost:3001/api/products/${params.id}`)
@@ -17,13 +18,17 @@ function ProductById() {
       .then((product) => {
         //console.log(product)
         setProductData(product.data);
+        
+        
         //console.log(product.data)
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
-  console.log(productData);
+  //console.log(productData.Modelo);
+  
+  
 
   return (
     <Card style={{ width: "18rem" }}>
